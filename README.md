@@ -8,7 +8,7 @@
 </p>
 </figure>
 
-**Figure.** Concepts of solubility prediction and data availability. Physical aspects of dissolution process of solid and corresponding descriptors by [Boobier et al Nature Communications 2020](https://www.nature.com/articles/s41467-020-19594-z)
+**Figure.** Concepts of solubility prediction and data availability. Physical aspects of dissolution process of solid and corresponding descriptors by [Boobier et al Nature Communications 2020](https://www.nature.com/articles/s41467-020-19594-z).
 
 
 In the literature the dissolution problem, i.e. whether a solid dissolves in a liquid, is split into three interaction types:
@@ -24,13 +24,13 @@ In the literature the dissolution problem, i.e. whether a solid dissolves in a l
 
 ### Aim: predict solubility of a molecule
 
-In other words, we give the model some numbers describing a molecule and ask it: "Will this thing dissolve in a solvent, or will it be stubborn?". First I predict solubility in water - because water is polite and behaves, i.e. the dataset is clean and perfect for a classification task. The other solvents (ethanol, benzene, acetone) are for the sequel, where we find out whether the model can generalize across different solvent environments.
+In other words, we give the model some numbers describing a molecule and ask it: "Will this thing dissolve in a solvent, or will it be stubborn?". First I predict solubility in water. The other solvents (ethanol, benzene, acetone) are for the sequel, where we could find out whether the model can generalize across different solvent environments.
 
 # Project Overview
 
 In this project, I make a use of a publicly available [dataset](https://doi.org/10.5281/zenodo.3686212) published by [Boobier et al Nature Communications 2020](https://www.nature.com/articles/s41467-020-19594-z) of organic molecules in different solvents (water, ethanol, benzene, acetone), along with the physicochemical descriptors described in the introduction. 
 
-I trained a few regression models, such as partial least squares (linear baseline), random forest, and XGBoost (tree model) to predict whether a molecule with a given features will dissolve in water.
+I trained a few regression models, such as partial least squares (linear baseline), random forest, and XGBoost (tree models) to predict whether a molecule with a given features will dissolve in water.
 
 # 🛠️ Tech Stack
 
