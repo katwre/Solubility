@@ -1,7 +1,5 @@
 # Introduction
 
-My chemistry knowledge ends at "tea dissolves sugar," and I genuinely thought hydrogen bonding meant friendship between molecules - but a friend of mine Nico cares about solubility, so here I am building a machine learning model to predict it.
-
 ### Concept: what drives solubility?
 
 <figure>
