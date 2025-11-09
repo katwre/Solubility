@@ -6,8 +6,9 @@
 <p align="center">
   <img src="images/solubility_intro.png" width="600" />
 </p>
-  <figcaption align="center"><b>Figure.</b> Concepts of solubility prediction and data availability. Physical aspects of dissolution process of solid and corresponding descriptors by [Boobier et al Nature Communications 2020](https://www.nature.com/articles/s41467-020-19594-z) </figcaption>
 </figure>
+
+**Figure.** Concepts of solubility prediction and data availability. Physical aspects of dissolution process of solid and corresponding descriptors by [Boobier et al Nature Communications 2020](https://www.nature.com/articles/s41467-020-19594-z)
 
 
 In the literature the dissolution problem, i.e. whether a solid dissolves in a liquid, is split into three interaction types:
