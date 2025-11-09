@@ -76,7 +76,7 @@ The model uses physicochemical descriptors that describe how a molecule interact
   - Lower free energy in water = more soluble
 
 
-Example a prediction request:
+Example prediction request:
 ```{bash}
 curl -s -X POST http://solubility-env.eba-utpwak55.eu-west-1.elasticbeanstalk.com/predict \
   -H "Content-Type: application/json" \
