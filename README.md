@@ -29,7 +29,7 @@ In other words, we give the model some numbers describing a molecule and ask it:
 
 In this project, I make a use of a publicly available [dataset](https://doi.org/10.5281/zenodo.3686212) published by [Boobier et al Nature Communications 2020](https://www.nature.com/articles/s41467-020-19594-z) of organic molecules in different solvents (water, ethanol, benzene, acetone), along with the physicochemical descriptors described in the introduction. 
 
-I trained a few models, such as Partial least squares (linear baseline), Random forest, and XGBoost (tree model) to predict whether a molecule will dissolve in water.
+I trained a few regression models, such as partial least squares (linear baseline), random forest, and XGBoost (tree model) to predict whether a molecule with a given features will dissolve in water.
 
 # 🛠️ Tech Stack
 
@@ -52,6 +52,28 @@ I trained a few models, such as Partial least squares (linear baseline), Random 
 # 🚀 Results (for users)
 
 If the installation steps make your eyes glaze over, but you actually know how solubility works, test a few molecules via API.
+
+The model uses physicochemical descriptors that describe how a molecule interacts with water:
+
+- **Size & Exposure**
+  - `MW`: Molecular weight
+  - `Volume`: Molecular volume
+  - `Area3`: Surface accessible to solvent (SASA)
+
+- **Charge / Polarity**
+  - `C_charges`, `O_charges`, `Het_charges`: Partial atomic charges
+  - `Asp1`, `Asp2`: How unevenly charge is distributed (polarity)
+  - `LsoluHsolv`: Hydrogen bond donor/acceptor balance
+
+- **Electronic / Quantum properties**
+  - `LUMO`: Lowest unoccupied molecular orbital energy
+
+- **Energetics (gas vs solvent)**
+  - `E0_gas`, `E0_solv`: Ground state energy of the molecule
+  - `G_solv`, `HF_G_solv`: Gibbs free energy in solvent
+  - `DeltaE0_sol`, `HF_DeltaG_sol`: Energy change when moving into water
+  - Lower free energy in water = more soluble
+  
 
 Example prediction request:
 ```{bash}
@@ -87,6 +109,8 @@ And the result:
 </p>
   <figcaption align="center"><b>Figure.</b> Result of an example query.</figcaption>
 </figure>
+
+
 
 ### How to use it?
 
