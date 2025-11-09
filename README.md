@@ -30,7 +30,7 @@ In other words, we give the model some numbers describing a molecule and ask it:
 
 In this project, I make a use of a publicly available [dataset](https://doi.org/10.5281/zenodo.3686212) published by [Boobier et al Nature Communications 2020](https://www.nature.com/articles/s41467-020-19594-z) of organic molecules in different solvents (water, ethanol, benzene, acetone), along with the physicochemical descriptors described in the introduction. 
 
-I trained a few regression models, such as partial least squares (linear baseline), random forest, and XGBoost (tree models) to predict whether a molecule with a given features will dissolve in water.
+I experimented with several regression models — Partial Least Squares (baseline linear model), Elastic Net (linear model with feature selection), Random Forest, and XGBoost (gradient-boosted trees) - to predict whether a molecule will dissolve in water based on its descriptors. XGBoost achieved the best performance, which is consistent with the findings in the original publication.
 
 # 🛠️ Tech Stack
 
