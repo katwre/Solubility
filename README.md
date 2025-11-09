@@ -73,7 +73,7 @@ The model uses physicochemical descriptors that describe how a molecule interact
   - `G_solv`, `HF_G_solv`: Gibbs free energy in solvent
   - `DeltaE0_sol`, `HF_DeltaG_sol`: Energy change when moving into water
   - Lower free energy in water = more soluble
-  
+
 
 Example prediction request:
 ```{bash}
@@ -138,7 +138,7 @@ Solubility/
 
 ### Installation
 
-#### Set-up
+#### Locally
 
 For **local** development and dependency management use pipenv and follow instructions below.
 
@@ -203,6 +203,8 @@ You should get a result such as:
 ```{bash}
 exit # or deactivate
 ```
+
+#### Deployment
 
 For the production environment, Docker is used to containerize the application and make **deployment** to e.g. AWS Elastic Beanstalk simple and reproducible. Follow the instructions below to build and run the Docker image.
 
@@ -272,7 +274,6 @@ curl -s -X POST http://solubility-env.eba-utpwak55.eu-west-1.elasticbeanstalk.co
   }'
 ```
 
-And it works! 🎉
 <figure>
 <p align="center">
   <img src="images/solubility_docker_AWSElasticBeanstalk.png" width="700" />
