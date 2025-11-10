@@ -1,30 +1,34 @@
 # Introduction
 
+### Aim: predict solubility of a molecule
+
+The goal of this project is simple: Given a set of molecular descriptors, predict whether a compound will dissolve in water. We provide the model with numeric features that describe the molecule (size, polarity, solvation energy, charge distribution, etc.) and ask: "Will this molecule dissolve, or will it stay stubbornly solid?"
+
+In this version, the focus is on water. Other solvents (ethanol, benzene, acetone) are available in the dataset and can be used later to test whether the model generalizes across solvent environments.
+
 ### Concept: what drives solubility?
+
+Solubility is a tug-of-war between how strongly the molecule likes itself (solid–solid) and how strongly it likes the solvent (solid–solvent).
 
 <figure>
 <p align="center">
   <img src="images/solubility_intro.png" width="600" />
 </p>
 </figure>
+*Figure.* Concepts of solubility prediction and data availability. Physical aspects of dissolution process of solid and corresponding descriptors by [Boobier et al Nature Communications 2020](https://www.nature.com/articles/s41467-020-19594-z).
 
-**Figure.** Concepts of solubility prediction and data availability. Physical aspects of dissolution process of solid and corresponding descriptors by [Boobier et al Nature Communications 2020](https://www.nature.com/articles/s41467-020-19594-z).
 
+In the literature, dissolution - whether a solid will dissolve in a liquid — is described as the balance of three types of interactions:
 
-In the literature the dissolution problem, i.e. whether a solid dissolves in a liquid, is split into three interaction types:
-
-- Solvent - solvent = how the solvent molecules interact with each other (top of triangle). For a given solvent (water, ethanol, benzene, acetone) this is constant, so there's nothing to learn per compound - no feature needed. Some liquids are naturally better at dissolving things (water is great, oil is not), but since the liquid in each dataset is the same, we don't need to model this.
-- Solute - solute = how strongly the solid holds onto itself (left): how molecules of the solid stick to each other (crystal/lattice strength). They approximate this with the melting point (m.p.)—higher m.p. ≈ stronger solid–solid interactions ≈ harder to dissolve. If the solid is very "stubborn" and its molecules cling tightly together, it won't dissolve easily, but that's not of my interest at the moment.
-- Solute - solvent = how well the solid and liquid can interact (right). This is where most of the variation happens. We describe these interactions using a few numeric features, such as:
+- Solvent - solvent interactions (top of triangle). How the liquid interacts with itself. For a given solvent (water, ethanol, benzene, acetone), this is constant — the molecules of the solvent don’t change between samples - so there’s nothing for the model to learn here..
+- Solute - solute interactions (left). How strongly the solid holds itself together (crystal packing / lattice strength). Compounds with strong intermolecular forces or high melting points tend to be stubborn solids that don't dissolve easily. This part is not modeled in this project
+- Solute - solvent interactions (right). How well the solid and liquid can interact — this is where the variation happens and what we model. These interactions are quantified using descriptors such as:
     - ΔG_solv / ΔE_solv (solvation energies): how the molecule interacts with the solvent
     - SASA (solvent-accessible surface area): how much of the molecule is exposed to the solvent
     - Molar volume, molecular weight (MW): size/weight of the molecule
     - Charge/dipole features (partial charges, dipole): whether it has charge or polarity
-    - HOMO–LUMO gap terms (simple frontier-orbital interaction proxies): simple electronic properties
+    - HOMO - LUMO gap terms (simple frontier-orbital interaction proxies): simple electronic properties
 
-### Aim: predict solubility of a molecule
-
-In other words, we give the model some numbers describing a molecule and ask it: "Will this thing dissolve in a solvent, or will it be stubborn?". First I predict solubility in water. The other solvents (ethanol, benzene, acetone) are for the sequel, where we could find out whether the model can generalize across different solvent environments.
 
 # Project Overview
 
