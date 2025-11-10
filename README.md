@@ -117,9 +117,6 @@ And the result:
 </figure>
 
 
-
-### How to use it?
-
 # 🚀 Quick Start (for developers)
 
 ### Organization of the files 
